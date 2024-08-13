@@ -25,7 +25,7 @@ public class AttributeExpansion extends PlaceholderExpansion implements VersionS
 
     public AttributeExpansion() {
         for (final Attribute attribute : Attribute.values()) {
-            if (!attribute.name().startsWith("GENERIC_")) {
+            if (!attribute.name().startsWith("GENERIC_") && !attribute.name().startsWith("PLAYER_")) {
                 continue;
             }
 
