@@ -30,10 +30,6 @@ public class AttributeExpansion extends PlaceholderExpansion implements VersionS
                 attributes.put(AttributeUtil.getKey(attribute).getKey(), attribute);
             }
 
-            if (!AttributeUtil.getName(attribute).startsWith("GENERIC_") && !AttributeUtil.getName(attribute).startsWith("PLAYER_")) {
-                continue;
-            }
-
             attributes.put(AttributeUtil.getName(attribute), attribute);
 
         }
