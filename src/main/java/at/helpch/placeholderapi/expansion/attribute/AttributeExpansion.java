@@ -59,7 +59,7 @@ public class AttributeExpansion extends PlaceholderExpansion implements VersionS
 
     @Override
     public @NotNull String getVersion() {
-        return "1.0.0";
+        return getClass().getPackage().getImplementationVersion();
     }
 
     @Override

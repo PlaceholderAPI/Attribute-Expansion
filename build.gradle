@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'at.helpch.placeholderapi.expansion'
-version '1.0.0'
+version '1.1.0'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 
@@ -30,4 +30,13 @@ dependencies {
 
 shadowJar {
     archiveFileName = "Expansion-Attribute-${project.version}.jar"
+}
+
+tasks {
+    jar {
+        manifest {
+            attributes["Implementation-Title"] = "attribute"
+            attributes["Implementation-Version"] = project.version
+        }
+    }
 }
