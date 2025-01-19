@@ -23,11 +23,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-    compileOnly 'me.clip:placeholderapi:2.11.1'
+    compileOnly 'org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.6'
     compileOnly 'org.jetbrains:annotations:22.0.0'
 }
 
 shadowJar {
-    archiveName("Expansion-Attribute-${project.version}.jar")
+    archiveFileName = "Expansion-Attribute-${project.version}.jar"
 }

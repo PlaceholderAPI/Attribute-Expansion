@@ -1,5 +1,6 @@
 package at.helpch.placeholderapi.expansion.attribute;
 
+import at.helpch.placeholderapi.expansion.attribute.util.AttributeUtil;
 import at.helpch.placeholderapi.expansion.attribute.util.ServerVersion;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
@@ -24,16 +25,13 @@ public class AttributeExpansion extends PlaceholderExpansion implements VersionS
     private final List<String> placeholders = new ArrayList<>();
 
     public AttributeExpansion() {
-        for (final Attribute attribute : Attribute.values()) {
-            if (!attribute.name().startsWith("GENERIC_") && !attribute.name().startsWith("PLAYER_")) {
-                continue;
-            }
-
-            attributes.put(attribute.name(), attribute);
-
+        for (final Attribute attribute : AttributeUtil.getAttributes()) {
             if (ServerVersion.HAS_KEYS) {
-                attributes.put(attribute.getKey().getKey(), attribute);
+                attributes.put(AttributeUtil.getKey(attribute).getKey(), attribute);
             }
+
+            attributes.put(AttributeUtil.getName(attribute), attribute);
+
         }
 
         placeholders.add("%attribute_player_has_<attribute>%");
